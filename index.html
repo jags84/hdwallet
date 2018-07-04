@@ -19,13 +19,31 @@
         <br>
         Source Code: https://github.com/ConsenSys/eth-lightwallet
       </p>
+      <!-- Generate Entropy -->
+      <div class="row">
+        <div class="col-12">
+          <h2>Generate Entropy</h2>
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="entropy-bar"></div>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <button class='btn btn-primary' id='new-entropy-button'>Generate Entropy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
       <!-- New Wallet -->
       <div class="row">
         <div class="col-12">
           <h2>New Wallet</h2>
           <div class="row">
             <div class="col-lg-8">
-              <input type="text" class='form-control' id="userEntropy" placeholder="Type random text to generate entropy" size="80"></input>
+              <input type="text" class='form-control disabled' disabled id="userEntropy" placeholder="Move Your Mouse Until You see the phase" size="80"></input>
             </div>
             <div class="col-lg-2">
               <button class='btn btn-primary' id='new-wallet-button'>Create New Wallet</button>
@@ -43,7 +61,7 @@
               <input type="text" class='form-control' id="seed" value="" size="80"></input>
             </div>
             <div class="col-lg-2">
-              <button class='btn btn-primary' onclick="setSeed()">Restore wallet from Seed</button>
+              <button class='btn btn-primary' id='restore-wallet-button'>Restore wallet from Seed</button>
             </div>
           </div>
         </div>
@@ -64,7 +82,7 @@
           <h2>Show Seed</h2>
           <div class="row">
             <div class="col-lg-12">
-              <button class='btn btn-primary' onclick="showSeed()">Show Seed</button>
+              <button class='btn btn-primary' id='show-seed-button'>Show Seed</button>
             </div>
           </div>
         </div>
@@ -77,6 +95,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/web3.js"></script>
     <script src="js/lightwallet.min.js"></script>
+    <script src="js/entropy-collector.js"></script>
+    <script src="js/jquery-md5.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
